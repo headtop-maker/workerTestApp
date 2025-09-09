@@ -1,17 +1,9 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { createStaticNavigation } from '@react-navigation/native';
+import { RootStack } from './app/Navigation';
+export const Navigation = createStaticNavigation(RootStack);
 
 function App() {
-  return (
-    <View style={styles.container}>
-      <Text>111</Text>
-    </View>
-  );
+  return <Navigation />;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
 
 export default App;
