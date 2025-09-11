@@ -25,13 +25,15 @@ const ShiftList = () => {
   const navigation = useNavigation();
   const { location } = useLocation();
 
-  console.log('location', location);
-
-  useEffect(() => {
+  const handleRefetch = useCallback(() => {
     if (location) {
       getWorkerInfo(String(location.latitude), String(location.longitude));
     }
   }, [getWorkerInfo, location]);
+
+  useEffect(() => {
+    handleRefetch();
+  }, [getWorkerInfo, handleRefetch, location]);
 
   const handleNavigate = useCallback(
     (id: string) => {
@@ -61,6 +63,8 @@ const ShiftList = () => {
           initialNumToRender={10}
           maxToRenderPerBatch={10}
           windowSize={5}
+          refreshing={isLoading}
+          onRefresh={handleRefetch}
         />
       )}
     </View>
