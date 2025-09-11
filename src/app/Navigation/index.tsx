@@ -1,21 +1,20 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { ScreenParamList } from '../../shared/types';
-import ShiftList from '../../screens/ShiftList/ui';
-import CurrentShift from '../../screens/CurrentShift/ui';
+import ShiftListScreen from '../../screens/ShiftListScreen/ui';
+import CurrentShiftScreen from '../../screens/CurrentShiftScreen/ui';
 
 export const RootStack = createNativeStackNavigator({
   screens: {
-    Courses: {
-      screen: ShiftList,
+    ShiftListScreen: {
+      screen: ShiftListScreen,
       options: {
         headerShown: false,
         contentStyle: { backgroundColor: '#FFFFFF' },
       },
     },
-    Tags: {
-      screen: CurrentShift,
+    CurrentShiftScreen: {
+      screen: CurrentShiftScreen,
       options: {
-        headerShown: false,
         contentStyle: { backgroundColor: '#FFFFFF' },
       },
     },

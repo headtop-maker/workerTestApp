@@ -1,6 +1,6 @@
 export type ScreenParamList = {
-  ShiftList: undefined;
-  CurrentShift: undefined;
+  ShiftListScreen: undefined;
+  CurrentShiftScreen: undefined | { id: string };
 };
 
 export type WorkerListResponse = {

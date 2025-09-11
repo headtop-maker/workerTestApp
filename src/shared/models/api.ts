@@ -16,7 +16,7 @@ const axiosInstance = axios.create({
 export const workerInfoApi = (
   lt: string,
   lg: string,
-): Promise<AxiosResponse<WorkerListResponse, unknown>> =>
+): Promise<AxiosResponse<{ data: WorkerListResponse }, unknown>> =>
   axiosInstance({
     timeout: 300000,
     method: 'GET',
