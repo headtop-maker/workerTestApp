@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { WorkerListResponse } from '../../../shared/types';
+import { dp } from '../../../shared/lib/getDP';
 
 const ShiftItem: FC<
   WorkerListResponse[0] & { handleNavigate: (id: string) => void }
@@ -59,8 +60,8 @@ const styles = StyleSheet.create({
   },
   flex1: { flex: 1 },
   image: {
-    width: 60,
-    height: 60,
+    width: dp(60),
+    height: dp(60),
     borderRadius: 12,
     marginRight: 12,
   },
