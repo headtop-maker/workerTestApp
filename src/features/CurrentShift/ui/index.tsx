@@ -62,18 +62,19 @@ const styles = StyleSheet.create({
     elevation: 3,
   },
   image: {
-    width: '50%',
+    width: '80%',
     aspectRatio: 1,
     borderRadius: 8,
     marginRight: dp(12),
   },
   companyContainer: {
     alignItems: 'center',
-    marginBottom: dp(8),
+    marginBottom: dp(10),
   },
   companyName: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: '600',
+    textAlign: 'center',
   },
   address: {
     fontSize: 14,
@@ -82,29 +83,33 @@ const styles = StyleSheet.create({
   dateStart: {
     fontSize: 18,
     fontWeight: '500',
-    marginBottom: 4,
+    marginBottom: dp(10),
   },
   timeStart: {
     fontSize: 18,
     color: '#333',
-    marginBottom: 8,
+    marginBottom: dp(10),
   },
   currentWorkers: {
     fontSize: 18,
-    marginBottom: 4,
+    marginBottom: dp(10),
   },
   workType: {
     fontSize: 18,
-    marginBottom: dp(4),
+    marginBottom: dp(10),
   },
   price: {
     fontSize: 16,
     fontWeight: '700',
     color: '#2E7D32',
-    marginBottom: dp(8),
+    marginBottom: dp(10),
   },
   rating: { flexDirection: 'row', alignItems: 'center' },
-  ratingText: { marginLeft: dp(8), fontSize: 18, color: '#555' },
+  ratingText: {
+    marginLeft: dp(8),
+    fontSize: 18,
+    color: '#555',
+  },
 });
 
 export default CurrentShift;

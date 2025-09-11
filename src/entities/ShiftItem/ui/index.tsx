@@ -82,17 +82,17 @@ const styles = StyleSheet.create({
   ratingContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: 4,
+    marginTop: dp(4),
   },
   ratingText: {
-    marginLeft: 4,
+    marginLeft: dp(4),
     fontSize: 14,
   },
   promoContainer: {
     backgroundColor: '#ff5252',
     borderRadius: 12,
-    paddingVertical: 4,
-    paddingHorizontal: 8,
+    paddingVertical: dp(4),
+    paddingHorizontal: dp(8),
   },
   promoText: {
     color: '#fff',

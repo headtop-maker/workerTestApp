@@ -27,10 +27,10 @@ const ShiftList = () => {
 
   const handleRefetch = useCallback(() => {
     if (location) {
-      getWorkerInfo(String(location.latitude), String(location.longitude));
+      getWorkerInfo(String(45.039268), String(38.987221));
     }
   }, [getWorkerInfo, location]);
-
+  //45.039268 38.987221
   useEffect(() => {
     handleRefetch();
   }, [getWorkerInfo, handleRefetch, location]);
