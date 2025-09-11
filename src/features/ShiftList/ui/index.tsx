@@ -29,8 +29,7 @@ const ShiftList = () => {
 
   useEffect(() => {
     if (location) {
-      // getWorkerInfo(location.latitude, location.longitude)
-      getWorkerInfo('45.039268', '38.987221');
+      getWorkerInfo(String(location.latitude), String(location.longitude));
     }
   }, [getWorkerInfo, location]);
 
@@ -48,7 +47,7 @@ const ShiftList = () => {
     },
     [handleNavigate],
   );
-  // указать параметры оптимизации
+
   return (
     <View style={styles.container}>
       {isLoading && <ActivityIndicator size={'large'} />}
@@ -59,6 +58,9 @@ const ShiftList = () => {
           keyExtractor={item => 'currentWorker' + item.id}
           renderItem={renderItem}
           showsVerticalScrollIndicator={false}
+          initialNumToRender={10}
+          maxToRenderPerBatch={10}
+          windowSize={5}
         />
       )}
     </View>
