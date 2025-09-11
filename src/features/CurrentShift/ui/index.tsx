@@ -61,22 +61,41 @@ const styles = StyleSheet.create({
     elevation: 3,
   },
   image: {
-    width: 48,
-    height: 48,
+    width: '50%',
+    aspectRatio: 1,
     borderRadius: 8,
     marginRight: 12,
   },
   companyContainer: {
-    flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 8,
   },
-  companyName: { fontSize: 16, fontWeight: '600' },
-  address: { fontSize: 12, color: '#555' },
-  dateStart: { fontSize: 14, fontWeight: '500', marginBottom: 4 },
-  timeStart: { fontSize: 14, color: '#333', marginBottom: 8 },
-  currentWorkers: { fontSize: 14, marginBottom: 4 },
-  workType: { fontSize: 14, marginBottom: 4 },
+  companyName: {
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  address: {
+    fontSize: 14,
+    color: '#555',
+  },
+  dateStart: {
+    fontSize: 18,
+    fontWeight: '500',
+    marginBottom: 4,
+  },
+  timeStart: {
+    fontSize: 18,
+    color: '#333',
+    marginBottom: 8,
+  },
+  currentWorkers: {
+    fontSize: 18,
+    marginBottom: 4,
+  },
+  workType: {
+    fontSize: 18,
+    marginBottom: 4,
+  },
   price: {
     fontSize: 16,
     fontWeight: '700',
@@ -84,7 +103,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   rating: { flexDirection: 'row', alignItems: 'center' },
-  ratingText: { marginLeft: 8, fontSize: 12, color: '#555' },
+  ratingText: { marginLeft: 8, fontSize: 18, color: '#555' },
 });
 
 export default CurrentShift;

@@ -11,6 +11,7 @@ import { WorkerListResponse } from '../../../shared/types';
 import { useCallback, useEffect } from 'react';
 import ShiftItem from '../../../entities/ShiftItem/ui';
 import { useNavigation } from '@react-navigation/native';
+import useLocation from '../../../shared/hooks/useLocation';
 
 const ShiftList = () => {
   const {
@@ -22,10 +23,16 @@ const ShiftList = () => {
   } = useWorkerStore();
 
   const navigation = useNavigation();
+  const { location } = useLocation();
+
+  console.log('location', location);
 
   useEffect(() => {
-    getWorkerInfo('45.039268', '38.987221');
-  }, [getWorkerInfo]);
+    if (location) {
+      // getWorkerInfo(location.latitude, location.longitude)
+      getWorkerInfo('45.039268', '38.987221');
+    }
+  }, [getWorkerInfo, location]);
 
   const handleNavigate = useCallback(
     (id: string) => {
