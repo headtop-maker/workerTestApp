@@ -1,6 +1,7 @@
 import { View, Text, Image, StyleSheet } from 'react-native';
 
 import { useWorkerStore } from '../../../shared/store/store';
+import { dp } from '../../../shared/lib/getDP';
 
 const CurrentShift = () => {
   const { currentPositionWorkerList, currentId } = useWorkerStore();
@@ -53,7 +54,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
     borderRadius: 16,
-    padding: 16,
+    padding: dp(16),
     marginVertical: 8,
     shadowColor: '#000',
     shadowOpacity: 0.1,
@@ -64,11 +65,11 @@ const styles = StyleSheet.create({
     width: '50%',
     aspectRatio: 1,
     borderRadius: 8,
-    marginRight: 12,
+    marginRight: dp(12),
   },
   companyContainer: {
     alignItems: 'center',
-    marginBottom: 8,
+    marginBottom: dp(8),
   },
   companyName: {
     fontSize: 16,
@@ -94,16 +95,16 @@ const styles = StyleSheet.create({
   },
   workType: {
     fontSize: 18,
-    marginBottom: 4,
+    marginBottom: dp(4),
   },
   price: {
     fontSize: 16,
     fontWeight: '700',
     color: '#2E7D32',
-    marginBottom: 8,
+    marginBottom: dp(8),
   },
   rating: { flexDirection: 'row', alignItems: 'center' },
-  ratingText: { marginLeft: 8, fontSize: 18, color: '#555' },
+  ratingText: { marginLeft: dp(8), fontSize: 18, color: '#555' },
 });
 
 export default CurrentShift;
