@@ -29,7 +29,9 @@ const ShiftItem: FC<
         <Text style={styles.prices}>Цена за работника: {priceWorker} ₽</Text>
 
         <View style={styles.ratingContainer}>
-          <Text style={styles.ratingText}>Рейтинг: {customerRating}</Text>
+          {customerRating && (
+            <Text style={styles.ratingText}>Рейтинг: {customerRating}</Text>
+          )}
         </View>
       </View>
 
