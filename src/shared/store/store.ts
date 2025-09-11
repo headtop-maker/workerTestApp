@@ -7,7 +7,7 @@ interface TWorkerState {
   error: string | undefined;
   currentPositionWorkerList: WorkerListResponse | undefined;
   currentId: string | undefined;
-  getWorkerInfo: (lt: string, lg: string) => Promise<void>;
+  getWorkerInfo: (latitude: string, longitude: string) => Promise<void>;
   setCurentId: (id: string) => void;
 }
 
@@ -25,10 +25,14 @@ export const useWorkerStore = create<TWorkerState>(set => ({
     set({ currentId: id });
   },
 
-  getWorkerInfo: async (lt: string, lg: string) => {
+  getWorkerInfo: async (latitude: string, longitude: string) => {
     set({ isLoading: true, error: '', currentPositionWorkerList: undefined });
     try {
-      const { data } = await workerInfoApi(lt, lg);
+      const { data } = await workerInfoApi(latitude, longitude);
+      console.log('data', data);
+      if (data.data.length === 0) {
+        throw new Error('Нет доступных вариантов');
+      }
       set({ currentPositionWorkerList: data.data, isLoading: false });
     } catch (error: unknown) {
       set({
