@@ -1,10 +1,9 @@
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import CurrentShift from '../../../features/CurrentShift/ui';
-import { StyleSheet } from 'react-native';
+
 import { useNavigation } from '@react-navigation/native';
 import { useEffect } from 'react';
 import { useWorkerStore } from '../../../shared/store/store';
-import { dp } from '../../../shared/lib/getDP';
+import withSafeArea from '../../../shared/HOC/withSafeArea';
 
 const CurrentShiftScreen = () => {
   const { currentPositionWorkerList, currentId } = useWorkerStore();
@@ -18,22 +17,7 @@ const CurrentShiftScreen = () => {
     navigation.setOptions({ title: currentShift?.companyName });
   }, [currentShift?.companyName, navigation]);
 
-  return (
-    <SafeAreaProvider>
-      <SafeAreaView style={styles.container}>
-        <CurrentShift />
-      </SafeAreaView>
-    </SafeAreaProvider>
-  );
+  return <CurrentShift />;
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    backgroundColor: 'white',
-    padding: dp(10),
-  },
-});
-
-export default CurrentShiftScreen;
+export default withSafeArea(CurrentShiftScreen);

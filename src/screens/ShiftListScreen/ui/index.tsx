@@ -1,24 +1,8 @@
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import ShiftList from '../../../features/ShiftList/ui';
-import { StyleSheet } from 'react-native';
-import { dp } from '../../../shared/lib/getDP';
+import withSafeArea from '../../../shared/HOC/withSafeArea';
 
 const ShiftListScreen = () => {
-  return (
-    <SafeAreaProvider>
-      <SafeAreaView style={styles.container}>
-        <ShiftList />
-      </SafeAreaView>
-    </SafeAreaProvider>
-  );
+  return <ShiftList />;
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'white',
-    padding: dp(5),
-  },
-});
-
-export default ShiftListScreen;
+export default withSafeArea(ShiftListScreen);

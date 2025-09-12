@@ -7,6 +7,7 @@ const useLocation = () => {
     latitude: number;
     longitude: number;
   } | null>(null);
+
   const requestLocationPermission = async () => {
     if (Platform.OS === 'android') {
       const granted = await PermissionsAndroid.request(
