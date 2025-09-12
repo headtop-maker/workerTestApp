@@ -53,7 +53,11 @@ const ShiftList = () => {
   return (
     <View style={styles.container}>
       {isLoading && <ActivityIndicator size={'large'} />}
+      {!location && (
+        <Text style={styles.errorText}>Нет данных о местоположении</Text>
+      )}
       {error && <Text style={styles.errorText}>{error}</Text>}
+
       {currentPositionWorkerList && (
         <FlatList
           data={currentPositionWorkerList}
